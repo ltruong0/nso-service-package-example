@@ -6,6 +6,28 @@
 ## Setup
 ---
 > This setup assumes Cisco NSO is already installed and setup on the host machine
+> Follow optional steps to create test devices via netsim if needed.
+---
+`Create Simulated Devices (Optional)`:
+> This step is optional if your NSO instance already has devices to communicate with
+```
+# cd into nso-instance directory
+cd nso-instance
+
+# create network and add devices
+ncs-netsim create-network <package> <amount> <prefix>
+
+# example
+ncs-netsim create-network packages/cisco-ios-cli-3.8 3 cisco-dev
+DEVICE cisco-dev0 CREATED
+DEVICE cisco-dev1 CREATED
+DEVICE cisco-dev2 CREATED
+```
+- This creates a network and adds 3 cisco ios devices with `cisco-dev` as the prefix
+  - cisco-dev0
+  - cisco-dev1
+  - cisco-dev2
+---
 
 `Create Package` :
 ```
